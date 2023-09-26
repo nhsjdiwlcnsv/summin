@@ -1,0 +1,11 @@
+import cv2
+
+
+MIN_COLOR_VAL: int = 0
+MAX_COLOR_VAL: int = 175
+DEFAULT_COLOR: tuple = (180, 228, 14)
+IMAGE_SIZE: tuple = (2048, 1447)
+FONT: int = cv2.FONT_HERSHEY_SIMPLEX
+FONT_SCALE: float = 0.75
+FONT_THICKNESS: int = 2
+BORDER_THICKNESS: int = 2
