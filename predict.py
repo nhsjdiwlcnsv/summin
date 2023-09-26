@@ -2,6 +2,7 @@ import argparse
 import glob
 import os
 
+from dotenv import load_dotenv
 import cv2
 import numpy as np
 import torch
@@ -14,6 +15,8 @@ from plots.constants import MIN_COLOR_VAL, MAX_COLOR_VAL, DEFAULT_COLOR
 
 
 if __name__ == "__main__":
+    load_dotenv()
+
     parser = argparse.ArgumentParser(prog="PDF Formula Detection")
 
     parser.add_argument("folder")
@@ -22,7 +25,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     folder, filetype = args.folder, args.filetype
 
-    model = YOLO('/Users/mishashkarubski/PycharmProjects/math-formula-detection/model/best.pt')
+    model = YOLO(os.environ["MODEL_PATH"])
     predictions = []
 
     if filetype == "pdf":
